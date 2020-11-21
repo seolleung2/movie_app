@@ -1,0 +1,13 @@
+body {
+  background-color: paleturquoise;
+}
+
+.movie {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.movie-data {
+  padding-left: 10px;
+}
