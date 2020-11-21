@@ -1,22 +1,40 @@
 import React from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log("Constructor Hello");
+  }
   state = {
     count: 0,
   };
   add = () => {
-    console.log("I Added!");
+    // console.log("I Added!");
     // this.setState({ count: this.state.count + 1 });
     this.setState((current) => ({ count: current.count + 1 }));
   };
 
   minus = () => {
-    console.log("Minus!");
+    // console.log("Minus!");
     // this.setState({ count: this.state.count - 1 });
     this.setState((current) => ({ count: current.count - 1 }));
   };
+  // 1. Component 하나가 태어날 때 (Component 호출 👉🏾 render 실행 👉🏾 componentDidMount 실행)
+  componentDidMount() {
+    console.log("Component rendered");
+  }
+
+  // 2. Component 가 업데이트 될 때 (상태변화)
+  componentDidUpdate() {
+    console.log("I just updated");
+  }
+  // 3. Component 가 죽을 때, 다른 페이지로 넘어가거 나 하는 이유로..
+  componentWillUnmount() {
+    console.log("Goodbye, cruel world");
+  }
   render() {
+    console.log("I'm rendering..");
     return (
       <div>
         <h1>Number Counter 👉🏾 {this.state.count}</h1>
